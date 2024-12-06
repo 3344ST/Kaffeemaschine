@@ -17,7 +17,10 @@ namespace Kaffeemaschine
         private static int maxWasserstand = 1000;               // in ml
         private static int maxBohnenmenge = 1000;               // in g
 
-
+        public int wasserstand1 { get => wasserstand; set => wasserstand = value; }
+        public int bohnenmenge1 { get => bohnenmenge; set => bohnenmenge = value; }
+        public static int maxWasserstand1 { get => maxWasserstand; }
+        public static int maxBohnenmenge1 { get => maxBohnenmenge; }
 
         internal Kaffeemaschine(int _wasserstand, int _bohnenmenge) 
         {
@@ -40,14 +43,15 @@ namespace Kaffeemaschine
             return bohnenauf;
         }
 
+        internal void MakeKaffee(int _wasserstand, int _bohnenmenge, int _anzahlKaffee)                 // ein Kaffee = 100 ml und 50 Gramm
+        {
+            int restWasser = this.wasserstand - (100 * _anzahlKaffee);
+            int restBohnen = this.bohnenmenge - (50 * _anzahlKaffee);
+            Console.WriteLine($"Hier Ihr(e) {_anzahlKaffee} Kaffe. Es sind noch {restWasser} ml Wasser\n Sowie {restBohnen} Gramm Bohnen vorhanden ");
+        }
 
 
-
-
-        public int wasserstand1 { get => wasserstand; set => wasserstand = value; }
-        public int bohnenmenge1 { get => bohnenmenge; set => bohnenmenge = value; }
-        public static int maxWasserstand1 { get => maxWasserstand; }
-        public static int maxBohnenmenge1 { get => maxBohnenmenge; }
+       
 
 
     }

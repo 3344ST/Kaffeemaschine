@@ -11,9 +11,9 @@
             Console.WriteLine($"Bitte füllen Sie {wasser} ml Wasser nach");
 
             int bohnen = maschine1.BohnenAuf();
-            Console.WriteLine($"Bitte füllen Sie {bohnen} Gramm Bohnen nach"); 
-            
+            Console.WriteLine($"Bitte füllen Sie {bohnen} Gramm Bohnen nach");
 
+            maschine1.MakeKaffee(600, 300, 4);          //Wasserstand, Bohnenmenge, Anzahl Kaffees
             
         }
     }
