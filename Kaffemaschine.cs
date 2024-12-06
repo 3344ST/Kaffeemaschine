@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace Kaffeemaschine
         private int wasserstand;                                // Wasserstand in ml (1000ml = 1l)
         private int bohnenmenge;                                // Bohnenmenge in g
         private int anzahlKaffee;                                
-        private static int maxWasserstand = 1000;               // in ml
+        private static int maxWasserstand = 2000;               // in ml
         private static int maxBohnenmenge = 1000;               // in g
 
 
@@ -31,7 +32,7 @@ namespace Kaffeemaschine
             this.wasserstand = _wasserstand;
             this.bohnenmenge = _bohnenmenge;
             
-            maxWasserstand = 1000;
+            maxWasserstand = 2000;
             maxBohnenmenge = 1000;
         
         }
@@ -92,9 +93,17 @@ namespace Kaffeemaschine
             return false;
         }
 
+        internal void WasserNach(int anzahl) 
+        {
+            wasserstand = wasserstand - (100 * anzahl);
+        }
 
+        internal void BohnenNach(int anzahl) 
+        {
+            bohnenmenge = bohnenmenge - (50 * anzahl);
+        }
 
-
+        
 
     }
 }

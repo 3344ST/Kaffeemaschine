@@ -1,4 +1,6 @@
-﻿namespace Kaffeemaschine
+﻿using System.Runtime.Intrinsics.X86;
+
+namespace Kaffeemaschine
 {
     internal class Program
     {
@@ -6,18 +8,58 @@
         {
             
 
-                Kaffeemaschine maschine1 = new Kaffeemaschine(600, 550);
+            Kaffeemaschine maschine1 = new Kaffeemaschine(2000, 1000);
+            
+            while (true)     //Menü Erstellung
+            {
+                Console.WriteLine($"Bitte wählen Sie (1 - 2 - 3):\n\n1. Kaffee ausgeben\n2. Kaffeemaschinen Status\n3. Beenden");
+                string input = Console.ReadLine();
+                int wasser = 0;
+                int bohnen = 0;
 
-                int wasser = maschine1.WasserAuf();
+                if (input == "1")
+                {
+                    Console.WriteLine("Wie viel Kaffee?");
+                    int anzahl = Convert.ToInt32(Console.ReadLine());
+                    maschine1.MakeKaffee(anzahl);
+                    maschine1.WasserNach(anzahl);
+                    maschine1.BohnenNach(anzahl);
+                    
 
-                Console.WriteLine($"Bitte füllen Sie {wasser} ml Wasser nach");
 
-                int bohnen = maschine1.BohnenAuf();
-                Console.WriteLine($"Bitte füllen Sie {bohnen} Gramm Bohnen nach");
+                }
+                else if (input == "2") 
+                {
+                    wasser = maschine1.WasserAuf();
+                    Console.WriteLine($"Bitte füllen Sie {wasser} ml Wasser nach");
+                    bohnen = maschine1.BohnenAuf();
+                    Console.WriteLine($"Bitte füllen Sie {bohnen} Gramm Bohnen nach");
+                }
+                else if (input == "3")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Falsche Eingabe");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            }
 
-                maschine1.MakeKaffee(3);          //Wasserstand, Bohnenmenge, Anzahl Kaffees
+
+
+
+            //int wasser = maschine1.WasserAuf();
+
+            //    Console.WriteLine($"Bitte füllen Sie {wasser} ml Wasser nach");
+
+            //    int bohnen = maschine1.BohnenAuf();
+            //    Console.WriteLine($"Bitte füllen Sie {bohnen} Gramm Bohnen nach");
+
+            //    maschine1.MakeKaffee(3);          //Wasserstand, Bohnenmenge, Anzahl Kaffees
                 
-
+       
 
 
                 
