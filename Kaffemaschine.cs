@@ -102,7 +102,26 @@ namespace Kaffeemaschine
         {
             bohnenmenge = bohnenmenge - (50 * anzahl);
         }
+        internal void Zubereitung() 
+        {
+            if ((GenugWasser() == true) && GenugBohnen() == true)
+            {
+                Console.WriteLine("\nIhr Kaffe wird zubereitet");
+                Console.Write("\nXXX");
+                Thread.Sleep(1000);
+                Console.Write("XXX");
+                Thread.Sleep(1000);
+                Console.Write("XXX");
+                Thread.Sleep(1000);
+                Console.Write("XXX");
+                Thread.Sleep(1000);
+                Console.Write("XXX");
+                Thread.Sleep(1000);
 
+                Console.WriteLine("\nBitte entnehmen sie ihren Kaffee");
+                Console.ReadKey();
+            }
+        }
         
 
     }

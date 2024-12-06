@@ -8,7 +8,7 @@ namespace Kaffeemaschine
         {
             
 
-            Kaffeemaschine maschine1 = new Kaffeemaschine(2000, 1000);
+            Kaffeemaschine maschine1 = new Kaffeemaschine(1900, 950);  //WasserMax: 2000; BohnenMax: 1000
             
             while (true)     //Menü Erstellung
             {
@@ -24,14 +24,12 @@ namespace Kaffeemaschine
                     maschine1.MakeKaffee(anzahl);
                     maschine1.WasserNach(anzahl);
                     maschine1.BohnenNach(anzahl);
-                    
-
-
+                    maschine1.Zubereitung();
                 }
                 else if (input == "2") 
                 {
                     wasser = maschine1.WasserAuf();
-                    Console.WriteLine($"Bitte füllen Sie {wasser} ml Wasser nach");
+                    Console.WriteLine($"Bitte füllen Sie {wasser}ml Wasser nach");
                     bohnen = maschine1.BohnenAuf();
                     Console.WriteLine($"Bitte füllen Sie {bohnen} Gramm Bohnen nach");
                 }
@@ -47,27 +45,15 @@ namespace Kaffeemaschine
                 }
             }
 
-
-
-
-            //int wasser = maschine1.WasserAuf();
-
-            //    Console.WriteLine($"Bitte füllen Sie {wasser} ml Wasser nach");
-
-            //    int bohnen = maschine1.BohnenAuf();
-            //    Console.WriteLine($"Bitte füllen Sie {bohnen} Gramm Bohnen nach");
-
-            //    maschine1.MakeKaffee(3);          //Wasserstand, Bohnenmenge, Anzahl Kaffees
-                
-       
-
-
-                
-
-
-
-
-    }
+        }
         
     }
 }
+
+
+
+         
+
+
+
+
